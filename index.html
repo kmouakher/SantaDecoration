@@ -51,27 +51,22 @@ turn on 606,361 through 892,600</textarea>
         Your browser does not support the HTML5 canvas tag.</canvas>
 
     <script>
-        nbLit = 0;
+        var nbLit = 0;
         // init lights matrix
-        var lightArrays = [];
-        var yArray = [];
-        for (y = 0; y < 1000; y++) {
-            yArray.push(0);
-        }
-        for (y = 0; y < 1000; y++) {
-            lightArrays.push(yArray);
-        }
+        var lightArrays = matrix(1000,1000,0);
 
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
 
         $("#process").click(function() {
+			nbLit = 0;
+			lightArrays = matrix(1000,1000,0);
             var instructionsArray = parseInstructions($("[name=distances]").val());
             executeInstructions(instructionsArray);
-            var htmlResult = "<br><b>Nb lit: " + nbLit + "</b>";
+			$("#results").html("<br><b>Nb lit: " + nbLit + "</b>");
 
             for (x = 0; x < lightArrays.length; x++) {
-                for (y = 0; y < yArray.length ; y++) {
+                for (y = 0; y < lightArrays.length ; y++) {
 
 
                     if (parseInt(lightArrays[x][y]) === 0) {
@@ -92,6 +87,28 @@ turn on 606,361 through 892,600</textarea>
 
             }
         });
+		
+		function matrix( rows, cols, defaultValue){
+
+		  var arr = [];
+
+		  // Creates all lines:
+		  for(var i=0; i < rows; i++){
+
+			  // Creates an empty line
+			  arr.push([]);
+
+			  // Adds cols to the empty line:
+			  arr[i].push( new Array(cols));
+
+			  for(var j=0; j < cols; j++){
+				// Initializes:
+				arr[i][j] = defaultValue;
+			  }
+		  }
+
+		return arr;
+		};
 
     </script>
 </div>
