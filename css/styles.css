@@ -1,0 +1,50 @@
+body{
+    padding: 20px;
+}
+
+#title {
+    text-align:     center;
+    font-size:      x-large;
+    align-content:  center;
+}
+
+
+textarea {
+    width:                  100%;
+    padding:                5px;
+    border:                 2px solid #ccc;
+    -webkit-border-radius:  5px;
+    border-radius:          5px;
+}
+
+#process {
+    padding: 0 3em;
+    outline: none;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1em;
+    line-height: 4;
+    overflow: hidden;
+    border-radius: 5px;
+    background: cornflowerblue;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+}
+
+
+#resultPanel{
+
+    text-align: center;
+    color: RED;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.border{border: 3px solid #fff;     border-radius: 5px;}
+
