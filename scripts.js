@@ -17,7 +17,7 @@ function parseInstructions(datas){
     return instructionsArrays;
 };
 
-function executeInstructions(instructionsArrays){
+function executeInstructions(instructionsArrays){"<br><b>Nb lit: " + nbLit + "</b>"
 
     $.each(instructionsArrays, function(index, instructionArray){
         // process instruction
@@ -47,19 +47,19 @@ function toggleOnOff(instructionType, startPoint, endPoint){
     }
 }
 
-function doInstruction(instructionType, x1, y1){
+function doInstruction(instructionType, x, y){
     if (instructionType == 'on'){
-        lightArrays[x1][y1] = 1;
+        lightArrays[x][y] = 1;
         nbLit++;
     }else if (instructionType == 'off'){
-        lightArrays[x1][y1] = 0;
+        lightArrays[x][y] = 0;
         nbLit--;
     }else if (instructionType == 'toggle'){
-        if (lightArrays[x1][y1] === 0) {
-            lightArrays[x1][y1] = 1;
+        if (lightArrays[x][y] == 0) {
+            lightArrays[x][y] = 1;
             nbLit++;
         }else {
-            lightArrays[x1][y1] = 0;
+            lightArrays[x][y] = 0;
             nbLit--;
         }
 
